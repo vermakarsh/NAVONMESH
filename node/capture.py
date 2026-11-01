@@ -76,7 +76,7 @@ class Capture:
         """Open the source. Raises RuntimeError if it cannot be read."""
         if self.is_webcam and sys.platform == "win32":
             # Windows' default MSMF backend hangs on some webcams; DSHOW does not.
-            cap = cv2.VideoCapture(self.source, cv2.CAP_DSHOW)
+            cap = cv2.VideoCapture(self.source, cv2.CAP_MSMF)
         else:
             cap = cv2.VideoCapture(self.source)
 
